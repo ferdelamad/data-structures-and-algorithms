@@ -1,8 +1,10 @@
-//first try
-//loop throught the array, get the min
+//loop the array
+//set the min to the first element
+//get the min (compare current vs min)
 //when reaching the last element of the array
 //swap the min with the current index of the array
 
+//Time Complexity O(n2)
 var selectionSort = array => {
   for (let i = 0; i < array.length; i++) {
     let min = i;
