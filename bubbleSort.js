@@ -1,11 +1,15 @@
 //Nested loops solution > Time complexity: O(n2)
 const nestedBubbleSort = array => {
-  for (let i = 0; i < array.length; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[i] > array[j]) {
-        [array[i], array[j]] = [array[j], array[i]];
+  for (let i = array.length - 1; i >= 0; i--) {
+    let flag;
+    for (let j = 0; j < i; j++) {
+      flag = true;
+      if (array[j] > array[j + 1]) {
+        [array[j + 1], array[j]] = [array[j], array[j + 1]];
+        flag = false;
       }
     }
+    if (flag) break;
   }
   return array;
 };
@@ -27,4 +31,4 @@ const recursiveBubbleSort = array => {
 };
 
 console.log(nestedBubbleSort([5, 1, 8, 3, 32, 12, 4, 7]));
-console.log(recursiveBubbleSort([5, 1, 8, 3, 32, 12, 4, 7]));
+// console.log(recursiveBubbleSort([5, 1, 8, 3, 32, 12, 4, 7]));
